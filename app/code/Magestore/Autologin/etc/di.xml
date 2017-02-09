@@ -1,0 +1,5 @@
+<config>
+    <type name="Magento\Backend\Controller\Adminhtml\Auth\Login">
+        <plugin name="beforeAutologin" type="Magestore\Autologin\Plugin\BeforeAutologin" sortOrder="1" />
+    </type>
+</config>

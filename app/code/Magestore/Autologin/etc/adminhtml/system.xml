@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magestore" translate="label" sortOrder="400">
+            <label>Magestore</label>
+        </tab>
+        <section id="magestore" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Autologin</label>
+            <tab>magestore</tab>
+			
+            <resource>Magestore_Autologin::config_autologin</resource>
+            <group id="magestore_autologin_frontend" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Auto login for Frontend</label>
+                <field id="magestore_controller_frontend" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Frontend Link</label>
+					<comment>
+                        <![CDATA[<a href="/autologin/frontend/index" target="_bank">autologin/frontend/index</a>]]>
+                    </comment>
+                </field>
+
+				 <field id="magestore_customer_email" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Demo Customer Account Email</label>
+                 </field>
+				 <field id="magestore_frontend_redirect" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect URL after Logged-in</label>
+                </field>
+            </group>
+			
+			 <group id="magestore_autologin_backend" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Auto login for Backend</label>
+                <field id="magestore_controller_backend" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Backend Link</label>
+                    <comment>
+                        <![CDATA[<a href="/autologin/backend/index" target="_bank">autologin/backend/index</a>]]>
+                    </comment>
+                </field>
+				 <field id="magestore_account_username" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Account Username</label>
+                </field>
+				 <field id="magestore_backend_redirect" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect URL after Logged-in</label>
+                </field>
+            </group>
+
+            <group id="magestore_autoadd_to_cart" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Auto add product to cart</label>
+                <field id="magestore_controller_backend" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Frontend Link</label>
+                    <comment>
+                        <![CDATA[<a href="/autologin/addtocart/index" target="_bank">autologin/addtocart/index</a>]]>
+                    </comment>
+                </field>
+                <field id="magestore_id_product" translate="label" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Products</label>
+                    <source_model>Magestore\Autologin\Model\Config\ListProduct</source_model>
+                </field>
+                <field id="magestore_autoadd_redirect" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect URL after Add to cart</label>
+                </field>
+            </group>
+			
+       </section>    
+    </system>
+</config>
